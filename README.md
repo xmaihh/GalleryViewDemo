@@ -9,14 +9,14 @@ implementation 'com.android.support:recyclerview-v7:28.0.0'
 
 ## RecyclerView实现GalleryView效果可(伪无限)无限左滑右滑
 先上效果图
-[](https://github.com/xmaihh/GalleryViewDemo/blob/master/app/arts/recyclerviewgallery.gif)
+![](https://github.com/xmaihh/GalleryViewDemo/blob/master/app/arts/recyclerviewgallery.gif)
 
 要点：
   1. 在有限的数据里面, 实现无限个Item
   2. 在第一次显示的时候, 就可以左滑
   3. 选中的Item被放大
 
-用RecyclerView实现GalleryView效果已经有BCsl大神的BCsl/GalleryLayoutManager使用自定义 LayoutManager 实现 Android 中 Gallery 或者 ViewPager 控件的效果
+用RecyclerView实现GalleryView效果已经有BCsl大神的[BCsl/GalleryLayoutManager](https://github.com/BCsl/GalleryLayoutManager)使用自定义 LayoutManager 实现 Android 中 Gallery 或者 ViewPager 控件的效果
 美滋滋:-P
 [传送门在这里](https://github.com/BCsl/GalleryLayoutManager)
 支持垂直和水平两个方向，支持 RecycleView 的试图回收机制
