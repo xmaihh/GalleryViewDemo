@@ -15,6 +15,7 @@ implementation 'com.android.support:recyclerview-v7:28.0.0'
   1. 在有限的数据里面, 实现无限个Item
   2. 在第一次显示的时候, 就可以左滑
   3. 选中的Item被放大
+
 用RecyclerView实现GalleryView效果已经有BCsl大神的BCsl/GalleryLayoutManager使用自定义 LayoutManager 实现 Android 中 Gallery 或者 ViewPager 控件的效果
 美滋滋:-P
 [传送门在这里](https://github.com/BCsl/GalleryLayoutManager)
