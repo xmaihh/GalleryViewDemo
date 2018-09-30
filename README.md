@@ -1,7 +1,7 @@
 # GalleryViewDemo
 
 - [RecyclerView实现GalleryView](https://github.com/xmaihh/GalleryViewDemo#recyclerview%E5%AE%9E%E7%8E%B0galleryview%E6%95%88%E6%9E%9C%E5%8F%AF%E4%BC%AA%E6%97%A0%E9%99%90%E6%97%A0%E9%99%90%E5%B7%A6%E6%BB%91%E5%8F%B3%E6%BB%91)
-- [ViewPager实现GalleryView](https://github.com/xmaihh/GalleryViewDemo#recyclerview%E5%AE%9E%E7%8E%B0galleryview%E6%95%88%E6%9E%9C%E5%8F%AF%E4%BC%AA%E6%97%A0%E9%99%90%E6%97%A0%E9%99%90%E5%B7%A6%E6%BB%91%E5%8F%B3%E6%BB%91)
+- [ViewPager实现GalleryView](https://github.com/xmaihh/GalleryViewDemo#viewpager%E5%AE%9E%E7%8E%B0galleryview%E6%95%88%E6%9E%9C%E5%8F%AF%E6%97%A0%E9%99%90%E5%B7%A6%E6%BB%91%E5%8F%B3%E6%BB%91)
 
 1. 导包
 ```
@@ -75,7 +75,7 @@ scrollBy(x, y)这个方法是自己去控制移动的距离，单位是像素,�
     }
  ```
 ## ViewPager 实现GalleryView效果
-继承JakeWharton/salvage大封装的可用于复用的PagerAdapter[RecyclingPagerAdapter]（https://github.com/JakeWharton/salvage/blob/master/salvage/src/main/java/com/jakewharton/salvage/RecyclingPagerAdapter.java）
+继承JakeWharton/salvage大封装的可用于复用的PagerAdapter[RecyclingPagerAdapter](https://github.com/JakeWharton/salvage/blob/master/salvage/src/main/java/com/jakewharton/salvage/RecyclingPagerAdapter.java)
 支持View回收,美滋滋:-P
 
 ## ViewPager实现GalleryView效果可无限左滑右滑
