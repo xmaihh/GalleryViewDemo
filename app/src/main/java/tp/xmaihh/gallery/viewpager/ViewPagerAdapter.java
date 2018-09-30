@@ -2,6 +2,7 @@ package tp.xmaihh.gallery.viewpager;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,8 @@ import tp.xmaihh.gallery.R;
 import tp.xmaihh.gallery.viewpager.salvage.RecyclingPagerAdapter;
 
 public class ViewPagerAdapter extends RecyclingPagerAdapter {
-    private Integer[] mImgs = {R.drawable.img_01, R.drawable.img_02,
-            R.drawable.img_03, R.drawable.img_04, R.drawable.img_05, R.drawable.img_06};
+    private Integer[] mImgs = {R.drawable.img_06, R.drawable.img_01, R.drawable.img_02,
+            R.drawable.img_03, R.drawable.img_04, R.drawable.img_05, R.drawable.img_06, R.drawable.img_01};
     private Context mContext;
 
     public ViewPagerAdapter(Context mContext) {
@@ -31,8 +32,8 @@ public class ViewPagerAdapter extends RecyclingPagerAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
-        imageView.setTag(position);
-        imageView.setImageResource(mImgs[position]);
+        imageView.setTag(position % mImgs.length);
+        imageView.setImageResource(mImgs[position % mImgs.length]);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +46,9 @@ public class ViewPagerAdapter extends RecyclingPagerAdapter {
     @Override
     public int getCount() {
         return mImgs.length == 0 ? 0 : mImgs.length;
+//        return Integer.MAX_VALUE;
     }
+
 
     /**
      * 该方法返回结果默认为1.0，其效果为ViewPager的Item占满整个ViewPager控件的宽度，

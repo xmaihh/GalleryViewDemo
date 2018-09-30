@@ -14,6 +14,8 @@ import tp.xmaihh.gallery.R;
 public class ViewPagerGalleryActivity extends AppCompatActivity {
     private ViewPagerAdapter mPagerAdapter;
     private GalleryViewPager mViewPager;
+    int currentIndex = 0;
+    boolean mIsChanged;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public class ViewPagerGalleryActivity extends AppCompatActivity {
         int width = this.getResources().getDisplayMetrics().widthPixels;
         layoutParams.width = width / 3;
         mViewPager.setLayoutParams(layoutParams);
-        mViewPager.setCurrentItem(1);
+        mViewPager.setCurrentItem(100);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -61,18 +63,34 @@ public class ViewPagerGalleryActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (position < 1) {
-                    //如果item位置小于1，也就是滑动到第0个item的位置时，则直接跳转到倒数第二个view处，并关闭跳转动画
-                    mViewPager.setCurrentItem(mPagerAdapter.getCount() - 2, false);
-                } else if (position > mPagerAdapter.getCount() - 2) {
 
-                    //同理如果item位置大于倒数第二个view的位置，也就是滑动到最后一个item的位置时，则直接跳转到第二个view处，并关闭跳转动画
-                    mViewPager.setCurrentItem(1, false);
+//                if (position < 1) {
+//                    //如果item位置小于1，也就是滑动到第0个item的位置时，则直接跳转到倒数第二个view处，并关闭跳转动画
+//                    mViewPager.setCurrentItem(mPagerAdapter.getCount() - 2, false);
+//                } else if (position > mPagerAdapter.getCount() - 2) {
+//
+//                    //同理如果item位置大于倒数第二个view的位置，也就是滑动到最后一个item的位置时，则直接跳转到第二个view处，并关闭跳转动画
+//                    mViewPager.setCurrentItem(1, false);
+//                }
+                mIsChanged = true;
+                if (position == 0) {
+                    currentIndex = mPagerAdapter.getCount() - 2;
+                } else if (position == mPagerAdapter.getCount() - 1) {
+                    currentIndex = 1;
+                } else {
+                    currentIndex = position;
                 }
+
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
+                if (state == ViewPager.SCROLL_STATE_IDLE) {
+                    if (mIsChanged) {
+                        mIsChanged = false;
+                        mViewPager.setCurrentItem(currentIndex, false);
+                    }
+                }
 
             }
         });
