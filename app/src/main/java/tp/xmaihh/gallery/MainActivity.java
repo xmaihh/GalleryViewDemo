@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import tp.xmaihh.gallery.recyclerview.RecyclerGalleryActivity;
+import tp.xmaihh.gallery.viewpager.ViewPagerGalleryActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toViewPager(View view) {
+        startActivity(new Intent(MainActivity.this, ViewPagerGalleryActivity.class));
     }
 }

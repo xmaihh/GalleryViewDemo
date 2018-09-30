@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:clipChildren="false"
+    android:layerType="software">
+
+    <!--RelativeLayout和自定义的ClipViewPager都各自添加了一个属性android:clipChildren=”false”，
+        clipChildren的意思是是否限制子View在其范围内，这个默认是true，
+        也就是默认是限制子view在其范围的-->
+    <tp.xmaihh.gallery.viewpager.GalleryViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="234dp"
+        android:layout_height="234dp"
+        android:layout_centerInParent="true"
+        android:clipChildren="false"
+        android:overScrollMode="never"></tp.xmaihh.gallery.viewpager.GalleryViewPager>
+
+</RelativeLayout>
